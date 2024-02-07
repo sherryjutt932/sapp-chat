@@ -16,28 +16,40 @@ import logo3 from "./assests/logos/logo3.png";
 import Features from "./components/Features/index.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
-
 function App() {
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis();
 
-lenis.on('scroll', ScrollTrigger.update)
+    lenis.on("scroll", ScrollTrigger.update);
 
-gsap.ticker.add((time)=>{
-  lenis.raf(time * 500)
-})
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 500);
+    });
 
-gsap.ticker.lagSmoothing(0)
+    gsap.ticker.lagSmoothing(0);
   }, []);
 
-  const logos = [
-    logo1,
-    logo2,
-    logo3,
-    logo1,
-    logo2,
-    logo3
-  ]
+  const logos = [logo1, logo2, logo3, logo1, logo2, logo3];
+
+  useEffect(() => {
+    const frombelowanim = document.getElementsByClassName("frombelowanim");
+
+    Array.from(frombelowanim).forEach((element) => {
+      gsap.from(element, {
+        duration: 0.5,
+        yPercent: 10,
+        opacity: 0,
+        ease: "sine",
+        delay: 0,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 70%",
+          toggleActions: "play none none unset",
+        },
+      });
+    });
+  }, []);
+
   return (
     <main className="App font-NohemiL bg-dark">
       <Hero />

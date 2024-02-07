@@ -12,75 +12,77 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Work() {
   const workSec = useRef();
   const imgRef = useRef();
-  const maxSec = 4;
   const detailRef = useRef();
   const [currentSec, setCurrentSec] = useState(1);
+  const maxSec = 4;
 
   useLayoutEffect(() => {
     var tl = gsap.timeline();
 
-    tl.to(imgRef.current, {
-      yPercent: -300,
-      ease: "none",
-    });
+    if (imgRef.current) {
+      tl.to(imgRef.current, {
+        yPercent: -300,
+        ease: "none",
+      });
 
-    ScrollTrigger.create({
-      trigger: workSec.current,
-      start: "top top",
-      end: () => `+=${imgRef.current.offsetHeight * 2}`,
-      scrub: true,
-      pin: true,
-      animation: tl,
-      // snap: {
-      //   snapTo: 1 / (imgRef.current.childNodes.length - 1),
-      // },
-      onUpdate: (self) => {
-        let progress = self.progress;
+      ScrollTrigger.create({
+        trigger: workSec.current,
+        start: "top top",
+        end: () => `+=${imgRef.current.offsetHeight * 2}`,
+        scrub: true,
+        pin: true,
+        animation: tl,
+        // snap: {
+        //   snapTo: 1 / (imgRef.current.childNodes.length - 1),
+        // },
+        onUpdate: (self) => {
+          let progress = self.progress;
 
-        if (progress <= 0.15) {
-          setCurrentSec(1);
-        }
-        if (progress > 0.15) {
-          setCurrentSec(2);
-        }
-        if (progress > 0.5) {
-          setCurrentSec(3);
-        }
-        if (progress > 0.75) {
-          setCurrentSec(4);
-        }
-      },
-    });
+          if (progress <= 0.15) {
+            setCurrentSec(1);
+          }
+          if (progress > 0.15) {
+            setCurrentSec(2);
+          }
+          if (progress > 0.5) {
+            setCurrentSec(3);
+          }
+          if (progress > 0.75) {
+            setCurrentSec(4);
+          }
+        },
+      });
+    }
   }, [workSec, imgRef]);
 
-  const buttonClasses =
-    "pl-16 2xl:pl-32 pb-12 row-span-1 col-span-3 row-start-3 flex flex-col justify-center m14:justify-start ";
+  const nextSection = () => {
+    const currentSecValue = currentSec + 1 <= maxSec ? currentSec + 1 : maxSec; // Capture the current value of currentSec
+    gsap.to(imgRef.current, {
+      yPercent: -(100 * (currentSecValue - 1)), // Use currentSecValue here
+      ease: "none",
+    });
+    setCurrentSec(currentSecValue);
+  };
 
-    const nextSection = () => {
-      const currentSecValue = (currentSec + 1) <= maxSec ? (currentSec + 1) : maxSec; // Capture the current value of currentSec
-      gsap.to(imgRef.current, {
-        yPercent: -(100 * (currentSecValue - 1)), // Use currentSecValue here
-        ease: "none",
-      });
-      setCurrentSec(currentSecValue)
-    };
-    
-    const prevSection = () => {
-      const currentSecValue = (currentSec - 1) >= 1 ? (currentSec - 1) : 1; // Capture the current value of currentSec
-      gsap.to(imgRef.current, {
-        yPercent: -(100 * (currentSecValue - 1)), // Use currentSecValue here
-        ease: "none",
-      });
-      setCurrentSec(currentSecValue)
-    };
-    
-    
+  const prevSection = () => {
+    const currentSecValue = currentSec - 1 >= 1 ? currentSec - 1 : 1; // Capture the current value of currentSec
+    gsap.to(imgRef.current, {
+      yPercent: -(100 * (currentSecValue - 1)), // Use currentSecValue here
+      ease: "none",
+    });
+    setCurrentSec(currentSecValue);
+  };
+
   return (
     <section className="h-fit">
       <div className="py-6 w-full text-white">
-      <Heading text={"Features"}/>
+        <Heading text={"Features"} />
       </div>
-      <div ref={workSec} className="w-full h-screen box-border overflow-hidden">
+
+      <div
+        ref={workSec}
+        className="w-full h-screen box-border overflow-hidden hidden sm:block"
+      >
         <div className=" heroSection h-screen w-full flex flex-col text-white relative">
           {/* work grid */}
           <div className="h-full text-xl grid grid-cols-8 grid-rows-3 ">
@@ -113,14 +115,51 @@ export default function Work() {
             <h1 className="font-libre text-6xl w-16">0{currentSec}</h1>
             <div className="flex-grow h-2 bg-sec"></div>
             <div className="flex items-center gap-6 text-2xl text-black">
-              <button onClick={prevSection} className={`rounded-full w-12 aspect-square flex items-center justify-center transition-all ${currentSec===1 ? 'bg-gray-400' : 'bg-white'}`}>
-                <IoIosArrowBack/>
+              <button
+                onClick={prevSection}
+                className={`rounded-full w-12 aspect-square flex items-center justify-center transition-all ${
+                  currentSec === 1 ? "bg-gray-400" : "bg-white"
+                }`}
+              >
+                <IoIosArrowBack />
               </button>
-              <button onClick={nextSection} className={`rounded-full w-12 aspect-square flex items-center justify-center transition-all ${currentSec===maxSec ? 'bg-gray-400' : 'bg-white'}`}>
-                <IoIosArrowForward/>
+              <button
+                onClick={nextSection}
+                className={`rounded-full w-12 aspect-square flex items-center justify-center transition-all ${
+                  currentSec === maxSec ? "bg-gray-400" : "bg-white"
+                }`}
+              >
+                <IoIosArrowForward />
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div ref={workSec} className="w-full h-fit box-border sm:hidden block">
+        <div className="h-fit w-full flex flex-col text-white relative">
+          {DetailData.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`frombelowanim p-5 sm:pl-16 pt-16 flex flex-col justify-start gap-4 sm:gap-8 w-full bg-dark`}
+              >
+                <img src={item.img} alt="" className="block w-full h-auto object-contain rounded-3xl" />
+                <h2 className="text-2xl leading-normal font-libre">
+                  {item.heading}
+                </h2>
+                <p className="text-base leading-loose font-normalF">
+                  {item.detail}
+                </p>
+                <a
+                  href="/"
+                  className="capitalize font-normalF border border-white px-8 sm:px-12 py-2 sm:py-4 no-underline rounded-full w-fit cursor-pointer"
+                >
+                  learn more
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

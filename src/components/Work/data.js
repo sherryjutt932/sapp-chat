@@ -7,17 +7,17 @@ export const DetailData = [
   {
     heading: "DeFi Is Available On Sappchat",
     detail: "Save your cryptocurrency on Sappchat and earn interest up to 130% APY.With Sappchat, you can borrow instant loan by pledging your cryptocurrency assets as collateral. Sappchat is making decentralized mobile banking available for everyone globally",
-    img: require("../../assests/work/work1.png"),
+    img: require("../../assests/work/work2.png"),
   },
   {
     heading: "Sappchat Offers The Coolest NFTs And Stickers Shopping Experience",
     detail: "Easily discover, create, store and trade all your unique crypto NFTs (non-fungible tokens), stickers and game assets in one place.Sappchat shop is secure, reliable, and convenient.",
-    img: require("../../assests/work/work1.png"),
+    img: require("../../assests/work/work3.png"),
   },
   {
     heading: "Best All In One Universal Cryptocurrency Wallet",
     detail: "With Sappchat, you can buy, send, receive and store all your coins and tokens easily, quickly and securely.Sappchat supports over 50+ blockchains and 200+ cryptocurrencies like BTC, ETH, BNB, DOGE, etc.",
-    img: require("../../assests/work/work1.png"),
+    img: require("../../assests/work/work4.png"),
   },
 ];
 

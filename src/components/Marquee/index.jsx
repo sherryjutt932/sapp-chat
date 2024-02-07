@@ -59,7 +59,7 @@ export default function Marquee({ ArrayData, direction, speed, ...props }) {
           ref={first}
         >
           {ArrayData.map((item, index) => (
-            <div className="w-24 sm:w-[20vw] max-h-[140px] flex-shrink-0 flex justify-center" key={index}>
+            <div className="w-40 sm:w-[20vw] max-h-[140px] flex-shrink-0 flex justify-center" key={index}>
               <img className="w-full max-w-full object-contain" src={item} alt="" />
             </div>
           ))}
@@ -69,7 +69,7 @@ export default function Marquee({ ArrayData, direction, speed, ...props }) {
           className="h-full absolute left-0 top-0 flex flex-nowrap gap-12 sm:gap-24 items-center px-6 sm:px-10"
         >
           {ArrayData.map((item, index) => (
-            <div className="w-24 sm:w-[20vw] max-h-[140px] flex-shrink-0 flex justify-center" key={index}>
+            <div className="w-40 sm:w-[20vw] max-h-[140px] flex-shrink-0 flex justify-center" key={index}>
               <img className="w-full max-w-full object-contain" src={item} alt="" />
             </div>
           ))}

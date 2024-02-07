@@ -28,7 +28,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+body > *{
+  width: 100%;
+  overflow: hidden;
+}
 
 
 @font-face {

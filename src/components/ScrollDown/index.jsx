@@ -23,13 +23,14 @@ export default function ScrollDown({ theme = "dark" }) {
   }, []);
 
   return (
-    <div className="flex items-center gap-4 absolute top-[80vh] right-10">
+    <div className="flex items-center gap-4 absolute top-[85vh] sm:top-[80vh] right-10">
       <svg
         width="53"
         height="119"
         viewBox="0 0 53 119"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="w-8 sm:w-auto"
       >
         <rect
           x="0.5"

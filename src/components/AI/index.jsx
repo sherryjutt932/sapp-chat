@@ -5,9 +5,9 @@ import bitcoin from "../../assests/images/bitcoin.png";
 
 export default function AI() {
   return (
-    <div className='bg-dark px-16 py-64 text-white flex flex-col items-center gap-5' >
+    <div className='bg-dark px-5 sm:px-16 py-32 sm:py-64 text-white flex flex-col items-center gap-5' >
         <Heading text={"Artificial Intelligence"}/>
-        <p className='text-2xl font-normalF leading-normal w-3/5 text-center'>
+        <p className='frombelowanim text-base sm:text-2xl font-normalF leading-normal sm:w-3/5 text-center'>
         Sappchat’s AI allows you to use your voice to take action. Search for exchange partners, surf your contact and manage your wallet without touching the device.
         </p>
 

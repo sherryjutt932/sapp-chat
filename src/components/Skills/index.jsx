@@ -22,29 +22,29 @@ useEffect(() => {
       [labelsRef.current.children[2], labelsRef.current.children[4]],
       //
       {
-        y:-40,
+        yPercent:-40,
       },
       {
-        y:60,
+        yPercent:100,
       },"a"
     )
     .fromTo(
       [labelsRef.current.children[3]],
       //
       {
-        y:-35,
+        yPercent:-35,
       },
       {
-        y:20,
+        yPercent:40,
       },"a"
     ).fromTo(
       [labelsRef.current.children[0],labelsRef.current.children[1]],
       //
       {
-        y:-25,
+        yPercent:-25,
       },
       {
-        y:100,
+        yPercent:200,
       },"a"
     )
     
@@ -86,10 +86,10 @@ useEffect(() => {
 }, []);
 
   return (
-    <div ref={skillsRef} className="bg-dark z-10 w-full flex flex-col text-white text-center mt-16 2xl:mt-0 px-16 py-16 2xl:py-32 gap-16">
+    <div ref={skillsRef} className="bg-dark z-10 w-full flex flex-col text-white text-center mt-16 2xl:mt-0 px-5 sm:px-16 py-16 2xl:py-32 gap-16">
       {/* heading */}
       <div ref={labelsCon} className=" w-full">
-        <div className="relative w-fit mx-auto font-libre text-[4vw] leading-tight">
+        <div className="relative w-fit mx-auto font-libre text-[max(4vw,40px)] leading-tight">
           Exchange Your CryptoAssets
           <br />
           Instantly
@@ -97,28 +97,28 @@ useEffect(() => {
             <Label theme="light" className="left-[20%] -top-4">
               Bitcoin
             </Label>
-            <Label theme="light" className="right-[10%]  -top-4">
+            <Label theme="light" className="right-[10%] -top-4">
               APP
             </Label>
-            <Label theme="light" className="-left-28 top-28">
+            <Label theme="light" className="left-4 sm:-left-[10%] top-28">
             Ethereum
             </Label>
             <Label theme="light" className="right-12 top-40">
               SOL
             </Label>
-            <Label theme="light" className="left-[30%] bottom-0">
+            <Label theme="light" className="left-[40%] sm:left-[30%] bottom-0">
             BNB
             </Label>
           </div>
         </div>
       </div>
 
-    <div className="flex justify-between items-center pt-[150px]">
+    <div className="flex flex-col sm:flex-row justify-between sm:items-center pt-16 sm:pt-[150px] gap-6">
       <div className="">
-      <img src={steric} ref={stericRef} alt="" className="w-[16vw]" />
+      <img src={steric} ref={stericRef} alt="" className="w-32 sm:w-[16vw]" />
       </div>
       <div className="">
-      <p className=" font-normalF text-2xl leading-loose w-[50ch] text-left">
+      <p className=" font-normalF text-base sm:text-2xl leading-loose sm:w-[50ch] text-left">
       Make instant swap of over 200 tokens and coins within Sappchat.You can easily and securely buy, sell, or exchange between tokens or coins at the best rates.
       </p>
       </div>

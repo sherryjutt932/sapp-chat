@@ -10,7 +10,7 @@ export default function Label({ style, children, theme, className }) {
         theme === "dark"
           ? "border-light bg-dark text-light"
           : "border-dark bg-[#D9D9D9] text-dark",
-        "font-libre px-10 py-2 rounded-full border-2 w-fit capitalize text-xl absolute"
+        "font-libre px-4 sm:px-10 py-1 sm:py-2 rounded-full border sm:border-2 w-fit capitalize text-sm sm:text-xl absolute"
       )}
     >
       {children}

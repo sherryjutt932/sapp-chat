@@ -12,9 +12,9 @@ import applestoreL from "../../assests/icons/applestoreL.svg";
 
 const Head = forwardRef(({ theme, z }, ref) => {
   return (
-    <div className=" h-[calc(100vh-6rem)] leading-none flex flex-col py-16 justify-between ">
+    <div className=" h-[calc(100vh-6rem)] leading-none flex flex-col py-16 gap-4 sm:gap-0 sm:justify-between ">
       {/* main heading */}
-      <div className="font-libre font-normal text-[6.2vw] leading-tight tracking-wide">
+      <div className="font-libre font-normal text-[max(6.2vw,40px)]  leading-normal sm:leading-tight tracking-wide">
         The world’s first <br />
         <Underline z={z} text={"Decentralized"} /> Messaging <br />
         App meets{" "}
@@ -27,10 +27,10 @@ const Head = forwardRef(({ theme, z }, ref) => {
           ref={ref}
           className={clsx(
             theme === "dark" ? "bg-main" : "bg-sec",
-            "w-[2vw] h-[2vw] aspect-square inline-block rounded-full align-baseline"
+            " w-4 h-4 sm:w-[2vw] sm:h-[2vw] aspect-square inline-block rounded-full align-baseline"
           )}
         ></span>{" "}
-        <span className="inline-flex gap-12 px-6 leading-none align-middle">
+        <span className="flex sm:inline-flex gap-4 sm:gap-12 py-6 sm:py-0 sm:px-6 leading-none align-middle">
           <IconBtn
             theme={theme}
             icon={theme === "dark" ? playstoreL : playstore}
@@ -45,7 +45,7 @@ const Head = forwardRef(({ theme, z }, ref) => {
           />
         </span>
       </div>
-      <p className="font-normalF font-normal text-[2vw] leading-[1.1]">
+      <p className="font-normalF font-normal text-[max(22px,2vw)] leading-[1.2]">
         Be a part of the future of decentralized Communication
       </p>
 
