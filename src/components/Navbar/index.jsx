@@ -6,16 +6,41 @@ import Popup from "./Popup";
 export default function Navbar({ theme }) {
   const [isActive, setisActive] = useState(0);
   const [isMenu, setIsMenu] = useState(false);
-  const navArray = ["Home", "Features", "Company", "Docs", "App Token", "Stake App"];
+  const navArray = [
+    {
+      label: "Home",
+      url: "/",
+      target:""
+    },
+    {
+      label: "Company",
+      url: "https://orangerocklabs.com/",
+      target:"_blank"
+    },
+    {
+      label: "Docs",
+      url: "/",
+      target:""
+    },
+    {
+      label: "App Token",
+      url: "/",
+      target:""
+    },
+    {
+      label: "Stake App",
+      url: "https://hodl.sappchat.com/ ",
+      target:"_blank"
+    },
+  ];
 
   const setActive = (index) => {
     setisActive(index);
   };
- 
+
   const handleMenuClick = () => {
     setIsMenu(!isMenu);
   };
-
 
   return (
     <nav
@@ -25,30 +50,34 @@ export default function Navbar({ theme }) {
     >
       <div>
         <a href="/">
-        <img src={logo} alt="" className="w-36 sm:w-44" />
+          <img src={logo} alt="" className="w-36 sm:w-44" />
         </a>
       </div>
-
       <div className="flex-1 gap-8 justify-end items-center hidden sm:flex">
         {navArray.map((item, index) => {
           return (
+          <a href={item.url} target={item.target} key={index}>
             <Icon
               theme={theme}
-              key={index}
               index={index}
               isActive={isActive}
               setActive={setActive}
             >
-              {item}
+              {item.label}
             </Icon>
+          </a>
           );
         })}
       </div>
 
       <button className="flex sm:hidden text-3xl bg-transparent p-0">
-      <Popup handleMenuClick={handleMenuClick} isMenu={isMenu} navArray={navArray}/>
+        <Popup
+          handleMenuClick={handleMenuClick}
+          isMenu={isMenu}
+          navArray={navArray}
+        />
       </button>
-      
+
       <span
         className={`${
           theme === "dark" ? "" : ""

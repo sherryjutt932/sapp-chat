@@ -3,7 +3,8 @@ import Marquee from "./Marquee";
 import clsx from "clsx";
 import Underline from "../Underline";
 import IconBtn from "../Buttons/IconBtn";
-import ScrollDown from "../ScrollDown/index.jsx"
+import ScrollDown from "../ScrollDown/index.jsx";
+import { googleplayLink, appstoreLink } from "../../Constants/links.js";
 
 import playstore from "../../assests/icons/playstore.svg";
 import applestore from "../../assests/icons/applestore.svg";
@@ -31,18 +32,22 @@ const Head = forwardRef(({ theme, z }, ref) => {
           )}
         ></span>{" "}
         <span className="flex sm:inline-flex gap-4 sm:gap-12 py-6 sm:py-0 sm:px-6 leading-none align-middle">
+          <a href={googleplayLink} target="_blank">
           <IconBtn
             theme={theme}
             icon={theme === "dark" ? playstoreL : playstore}
             label1={"get it on"}
             label2={"Google play"}
           />
+          </a>
+          <a href={appstoreLink} target="_blank">
           <IconBtn
             theme={theme}
             icon={theme === "dark" ? applestoreL : applestore}
             label1={"get it on"}
             label2={"Apple play"}
           />
+          </a>
         </span>
       </div>
       <p className="font-normalF font-normal text-[max(22px,2vw)] leading-[1.2]">

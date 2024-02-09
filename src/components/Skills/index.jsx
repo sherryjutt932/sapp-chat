@@ -119,7 +119,7 @@ useEffect(() => {
       </div>
       <div className="">
       <p className=" font-normalF text-base sm:text-2xl leading-loose sm:w-[50ch] text-left">
-      Make instant swap of over 200 tokens and coins within Sappchat.You can easily and securely buy, sell, or exchange between tokens or coins at the best rates.
+      Make instant swap of over 200 tokens and coins within Sappchat. You can easily and securely buy, sell, or exchange between tokens or coins at the best rates.
       </p>
       </div>
     </div>

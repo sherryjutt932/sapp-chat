@@ -1,9 +1,38 @@
 import React from 'react'
 import Heading from '../Heading'
 import AICard from './AICard'
+
 import bitcoin from "../../assests/images/bitcoin.png";
+import kucoin from "../../assests/images/kucoin.png";
+import bybit from "../../assests/images/bybit.png";
 
 export default function AI() {
+  const list = [
+    {
+      name:"Binance",
+      img:bitcoin,
+      price:"1 EUR = 261 USD",
+      arrive:"30 min",
+      id:"...04efa56865ff123",
+      link:"https://www.binance.com/en"
+    },
+    {
+      name:"Kucoin",
+      img:kucoin,
+      price:"1 EUR = 261 USD",
+      arrive:"30 min",
+      id:"...04efa56865ff123",
+      link:"https://www.kucoin.com/"
+    },
+    {
+      name:"Bybit",
+      img:bybit,
+      price:"1 EUR = 261 USD",
+      arrive:"30 min",
+      id:"...04efa56865ff123",
+      link:"https://www.bybit.com/en"
+    }
+  ]
   return (
     <div className='bg-dark px-5 sm:px-16 py-32 sm:py-64 text-white flex flex-col items-center gap-5' >
         <Heading text={"Artificial Intelligence"}/>
@@ -12,9 +41,11 @@ export default function AI() {
         </p>
 
         <div className='w-full flex mt-8 gap-6 flex-wrap'>
-        <AICard img={bitcoin} price={"1 EUR = 261 USD"} arrive={"30 min"} id={"...04efa56865ff123"} />
-        <AICard img={bitcoin} price={"1 EUR = 261 USD"} arrive={"30 min"} id={"...04efa56865ff123"} />
-        <AICard img={bitcoin} price={"1 EUR = 261 USD"} arrive={"30 min"} id={"...04efa56865ff123"} />
+        {list.map((item, index)=>{
+          return(
+            <AICard key={index} data={item} />
+            )
+        })}
         </div>
     </div>
   )

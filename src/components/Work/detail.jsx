@@ -11,7 +11,7 @@ export default function Detail({ active = false, data }) {
       <p className="text-[1.5vw] leading-loose font-normalF">{data.detail}</p>
       <a
         href="/"
-        className="capitalize font-normalF border border-white px-12 py-4 no-underline rounded-full w-fit cursor-pointer"
+        className="hidden capitalize font-normalF border border-white px-12 py-4 no-underline rounded-full w-fit cursor-pointer"
       >
         learn more
       </a>

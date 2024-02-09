@@ -49,13 +49,18 @@ export default function AboutUs() {
     }
 
     if (!isMobile()) {
+      gsap.set(aboutRef.current, {
+        x: window.innerWidth/2,
+        ease: "none",
+      });
+
       gsap
         .timeline({
           scrollTrigger: {
             trigger: aboutSec.current,
             start: "top top",
-            end: () => "+=" + aboutSec.current.offsetWidth * 1.5,
-            scrub: true,
+            end: () => "+=" + aboutSec.current.offsetWidth/2,
+            scrub: 1,
             pin: true,
             anticipatePin: 1,
           },
@@ -63,7 +68,7 @@ export default function AboutUs() {
         .to(
           aboutRef.current,
           {
-            x: -(aboutRef.current.offsetWidth - window.innerWidth / 2),
+            x: -(aboutRef.current.offsetWidth - (window.innerWidth * 0.8)),
             ease: "none",
           },
           "a"
@@ -101,11 +106,6 @@ export default function AboutUs() {
                 text="Superior end-to-end encryption"
                 imageSrc={Superior}
                 detail="Our security protocol developed on genuine end-to-end encryption and blockchain based authentication."
-              />
-              <ScrollerItem
-                text="Decentralized"
-                imageSrc={Decentralized}
-                detail="Sappchat platform is decentralized through blockchain technology. Attacks on your sensitive data are impossible."
               />
             </div>
           </div>

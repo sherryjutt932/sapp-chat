@@ -16,10 +16,11 @@ export default function Popup({ handleMenuClick, isMenu, navArray }) {
           return (
             <a
               key={index}
-              href="/"
+              target={item.target}
+              href={item.url}
               className={` ${!isMenu?'scale-0':'scale-100'} origin-bottom-left transition-all duration-1000 ease font-normalF text-2xl text-black w-full active:bg-gray-200 hover:bg-gray-200 text-left rounded-md px-2 py-1`}
             >
-              {item}
+              {item.label}
             </a>
           );
         })}

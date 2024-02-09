@@ -19,12 +19,12 @@ export default function Work() {
   useLayoutEffect(() => {
     var tl = gsap.timeline();
 
-    if (imgRef.current) {
+    if(imgRef.current){
       tl.to(imgRef.current, {
         yPercent: -300,
         ease: "none",
       });
-
+  
       ScrollTrigger.create({
         trigger: workSec.current,
         start: "top top",
@@ -37,7 +37,7 @@ export default function Work() {
         // },
         onUpdate: (self) => {
           let progress = self.progress;
-
+  
           if (progress <= 0.15) {
             setCurrentSec(1);
           }
@@ -136,7 +136,7 @@ export default function Work() {
         </div>
       </div>
 
-      <div ref={workSec} className="w-full h-fit box-border sm:hidden block">
+      <div className="w-full h-fit box-border sm:hidden block">
         <div className="h-fit w-full flex flex-col text-white relative">
           {DetailData.map((item, index) => {
             return (
@@ -153,7 +153,7 @@ export default function Work() {
                 </p>
                 <a
                   href="/"
-                  className="capitalize font-normalF border border-white px-8 sm:px-12 py-2 sm:py-4 no-underline rounded-full w-fit cursor-pointer"
+                  className="hidden capitalize font-normalF border border-white px-8 sm:px-12 py-2 sm:py-4 no-underline rounded-full w-fit cursor-pointer"
                 >
                   learn more
                 </a>

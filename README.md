@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# justin-web
+# Sapp Chat
 Client Website in React
 =======
 # Getting Started with Create React App
