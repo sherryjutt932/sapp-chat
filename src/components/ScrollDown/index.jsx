@@ -23,7 +23,7 @@ export default function ScrollDown({ theme = "dark" }) {
   }, []);
 
   return (
-    <div className="flex items-center gap-4 absolute top-[85vh] sm:top-[80vh] right-10">
+    <div className="flex justify-end items-center gap-4 sm:absolute sm:top-[80vh] sm:right-10">
       <svg
         width="53"
         height="119"

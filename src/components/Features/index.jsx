@@ -38,13 +38,13 @@ export default function Features() {
       <div className="frombelowanim w-full flex flex-wrap sm:flex-nowrap justify-center items-center py-12 gap-16">
         {list.map((item, index) => {
           return (
-            <a key={index} href={item.link} target={item.target} className="w-[30%] sm:w-[15%] block cursor-pointer hover:scale-110 transition-all">
+            <div key={index} className="w-[30%] sm:w-[15%] block">
               <img
                 className="w-full block max-h-[60px] object-contain"
                 src={item.img}
                 alt=""
               />
-            </a>
+            </div>
           );
         })}
       </div>

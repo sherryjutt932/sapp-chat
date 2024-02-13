@@ -90,7 +90,7 @@ useEffect(() => {
       {/* heading */}
       <div ref={labelsCon} className=" w-full">
         <div className="relative w-fit mx-auto font-libre text-[max(4vw,40px)] leading-tight">
-          Exchange Your CryptoAssets
+           Exchange your Crypto Assets
           <br />
           Instantly
           <div ref={labelsRef} className="absolute left-0 top-0 h-full w-full text-2xl">

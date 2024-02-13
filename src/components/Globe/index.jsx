@@ -65,8 +65,12 @@ export default function Globe({ theme }) {
 
       {/* heading with shadow */}
       <div className="h-1/3 w-full z-10 absolute top-0 sm:top-24 left-0 flex flex-col items-center gap-3 sm:gap-6 pt-4 sm:pt-40 text-center" style={{ background: `linear-gradient(to bottom, #181618 50%, #18161800)` }}>
-        <h1 className="text-2xl sm:text-3xl font-normalF font-semibold">What is Sappchat?</h1>
-        <p className="text-base sm:text-xl font-normalF sm:w-3/5 font-light">Sappchat will help to establish a new era of secure communication and easy peer-to-peer transfer of money and cryptocurrencies to everyone you know around the world</p>
+        <h1 className="text-2xl sm:text-3xl font-normalF font-semibold">
+        What is Sappchat?
+        </h1>
+        <p className="text-base sm:text-xl font-normalF sm:w-3/5 font-light">
+        Sappchat is helping establish a new era of secure communication and easy peer-to-peer transfer of money and cryptocurrencies to everyone you know around the world
+        </p>
       </div>
 
       {/* bottom shadow */}

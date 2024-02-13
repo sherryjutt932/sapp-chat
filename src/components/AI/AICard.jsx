@@ -4,7 +4,7 @@ export default function AICard({data}) {
   return (
     <div className='frombelowanim flex-1 sm:min-w-[420px] font-normalF p-4 sm:p-6 rounded-2xl' style={{background:`linear-gradient(135deg, #00000080 , #00000000)`}}>
         <div className='flex gap-4 items-center'>
-            <a href={data.link} target='_blank' className='cursor-pointer'>
+            <a href={data.link} target='_blank' rel="noreferrer" className='cursor-pointer'>
             <img src={data.img} alt="" className='rounded-full block w-10 sm:w-20' />
             </a>
             <div>

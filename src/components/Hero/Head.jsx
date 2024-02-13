@@ -13,9 +13,9 @@ import applestoreL from "../../assests/icons/applestoreL.svg";
 
 const Head = forwardRef(({ theme, z }, ref) => {
   return (
-    <div className=" h-[calc(100vh-6rem)] leading-none flex flex-col py-16 gap-4 sm:gap-0 sm:justify-between ">
+    <div className="h-fit sm:h-[calc(100vh-6rem)] leading-none flex flex-col py-16 gap-4 sm:gap-0 sm:justify-between ">
       {/* main heading */}
-      <div className="font-libre font-normal text-[max(6.2vw,40px)]  leading-normal sm:leading-tight tracking-wide">
+      <div className="font-libre font-normal text-[9vw] sm:text-[max(6.2vw,40px)]  leading-normal sm:leading-tight tracking-wide">
         The world’s first <br />
         <Underline z={z} text={"Decentralized"} /> Messaging <br />
         App meets{" "}
@@ -31,8 +31,8 @@ const Head = forwardRef(({ theme, z }, ref) => {
             " w-4 h-4 sm:w-[2vw] sm:h-[2vw] aspect-square inline-block rounded-full align-baseline"
           )}
         ></span>{" "}
-        <span className="flex sm:inline-flex gap-4 sm:gap-12 py-6 sm:py-0 sm:px-6 leading-none align-middle">
-          <a href={googleplayLink} target="_blank">
+        <span className="flex sm:inline-flex gap-4 sm:gap-12 py-6 sm:py-0 sm:px-6 leading-none align-middle items-center">
+          <a href={googleplayLink} target="_blank" rel="noreferrer" className="flex">
           <IconBtn
             theme={theme}
             icon={theme === "dark" ? playstoreL : playstore}
@@ -40,7 +40,7 @@ const Head = forwardRef(({ theme, z }, ref) => {
             label2={"Google play"}
           />
           </a>
-          <a href={appstoreLink} target="_blank">
+          <a href={appstoreLink} target="_blank" rel="noreferrer" className="flex">
           <IconBtn
             theme={theme}
             icon={theme === "dark" ? applestoreL : applestore}
@@ -51,7 +51,7 @@ const Head = forwardRef(({ theme, z }, ref) => {
         </span>
       </div>
       <p className="font-normalF font-normal text-[max(22px,2vw)] leading-[1.2]">
-        Be a part of the future of decentralized Communication
+      Be part of the market leader in decentralized communication and Finance
       </p>
 
       <ScrollDown theme={theme}/>
