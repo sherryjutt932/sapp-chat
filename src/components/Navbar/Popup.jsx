@@ -18,9 +18,11 @@ export default function Popup({ handleMenuClick, isMenu, navArray }) {
               key={index}
               target={item.target}
               href={item.url}
-              className={` ${!isMenu?'scale-0':'scale-100'} origin-bottom-left transition-all duration-1000 ease font-normalF text-2xl text-black w-full active:bg-gray-200 hover:bg-gray-200 text-left rounded-md px-2 py-1`}
+              className={` ${!isMenu?'scale-0':'scale-100'} relative origin-bottom-left transition-all duration-1000 ease font-normalF text-2xl text-black w-full active:bg-gray-200 hover:bg-gray-200 text-left rounded-md px-2 py-1`}
             >
               {item.label}
+            {item.new && <span className="ml-3 align-middle bg-[#f90842] leading-[1.2] px-3 py-1 rounded-full text-white text-sm">new</span>}
+
             </a>
           );
         })}
