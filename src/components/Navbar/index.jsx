@@ -19,11 +19,12 @@ export default function Navbar({ theme }) {
     },
     {
       label: "Docs",
-      url: "/",
+      url: "https://sappchat.gitbook.io/docs/",
       target:""
     },
     {
-      label: "App Token",
+      label: "DN404",
+      new:true,
       url: "/",
       target:""
     },
@@ -56,7 +57,7 @@ export default function Navbar({ theme }) {
       <div className="flex-1 gap-8 justify-end items-center hidden sm:flex">
         {navArray.map((item, index) => {
           return (
-          <a href={item.url} target={item.target} key={index}>
+          <a href={item.url} target={item.target} key={index} className="relative">
             <Icon
               theme={theme}
               index={index}
@@ -65,6 +66,7 @@ export default function Navbar({ theme }) {
             >
               {item.label}
             </Icon>
+            {item.new && <span className="absolute -right-4 -top-5 bg-[#f90842] leading-[1.2] px-3 py-1 rounded-full text-white text-sm">new</span>}
           </a>
           );
         })}
