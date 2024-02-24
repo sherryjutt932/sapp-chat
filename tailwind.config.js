@@ -39,6 +39,7 @@ module.exports = {
         },
         "main": "#F8F4E8",
         "sec": "#0090FF",
+        "secD": "#0079d5",
         "comp": "#F99925",
         "dark": "#181618",
         "light": "#ffffff"

@@ -25,8 +25,7 @@ export default function Navbar({ theme }) {
     {
       label: "DN404",
       new:true,
-      url: "/",
-      target:"_blank"
+      url: "/DN404",
     },
     {
       label: "Stake App",
