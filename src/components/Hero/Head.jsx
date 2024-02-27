@@ -51,7 +51,7 @@ const Head = forwardRef(({ theme, z }, ref) => {
         </span>
       </div>
       <p className="font-normalF font-normal text-[max(22px,2vw)] leading-[1.2]">
-      Be part of the market leader in decentralized communication and finance
+      Be a part of the market leader in decentralized communication and finance
       </p>
 
       <ScrollDown theme={theme}/>

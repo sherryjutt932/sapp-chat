@@ -171,13 +171,8 @@ export default function DN404() {
             SAPP TEDDY
           </h1>
           <p className=" opacityAnim font-normalF text-[16px] sm:text-[18px] 2xl:text-[20px] w-[90%] mx-auto pb-8 xl:pb-16 text-[#7A7A7A]">
-            <b className="text-dark">Sapp Teddy</b> is the first established
-            NFTs collection brand to launch on DN404. <br />
-            There are only 10,000 ultra-limited rare Sapp Teddy that will ever
-            be created. They come with several unique traits and designs. These
-            collectibles will be forever stored on the Blockchain. Sapp Teddy
-            will be traded on the open market immediately after the mint is
-            completed.
+            <b className="text-dark">Sapp Teddy is the first established NFTs collection brand to launch on the DN404 Binance Chain. </b><br />
+            There are only 10,000 ultra-limited rare Sapp Teddy that will ever be created. They come with several unique traits and designs. These collectibles will be forever stored on the Blockchain. Sapp Teddy will be traded on the open market immediately after the mint is completed.
           </p>
           <Buttons />
           <img
@@ -209,10 +204,8 @@ export default function DN404() {
             </h1>
 
             <p className={`text-light righttext2 ${textClass}`}>
-              We are setting aside a reward pool that comprises 5% on all
-              purchases and some amount of Sappchat APP tokens. Sapp Teddy
-              holders can stake their NFTs to earn from the pool over the period
-              of 3 months, 6 months or up to a year.
+            We are setting aside a reward pool of 2.5% of the total supply of Sappchat APP tokens. Sapp Teddy holders can stake their NFTs to earn from the pool over the period of 3 months, 6 months, or up to a year.
+
             </p>
           </div>
         </section>
@@ -224,8 +217,9 @@ export default function DN404() {
             </h1>
 
             <p className={`text-dark lefttext2 ${textClass}`}>
-              As a Sapp Teddy holder, you will receive royalty fees on all
-              secondary sales, creating an additional stream of value.
+            As a Sapp Teddy holder, you will receive 10% royalty fees on all secondary sales, creating an additional stream of value.
+
+
             </p>
           </div>
           <div className="sm:flex-1">
@@ -247,9 +241,8 @@ export default function DN404() {
             </h1>
 
             <p className={`text-dark righttext2 ${textClass}`}>
-              Sapp Teddy holders gain exclusive access to pre-sales on the
-              Sappchat Launchpad, offering early access to exciting ecosystem
-              opportunities.
+            Sapp Teddy holders gain exclusive access to pre-sales on the Sappchat Launchpad, offering early access to exciting ecosystem opportunities.
+
             </p>
           </div>
         </section>
@@ -261,11 +254,8 @@ export default function DN404() {
             </h1>
 
             <p className={`text-dark lefttext2 ${textClass}`} >
-              The Sappchat governance system allows users to vote on the
-              ecosystem development using Sapp Teddy and Sappchat APP tokens.
-              Active participants earn APP tokens as and when they sponsor a
-              successful proposal, fostering community engagement and shaping
-              the governance system.
+            The Sappchat governance system allows users to vote on the ecosystem development using Sapp Teddy and Sappchat APP tokens. Active participants earn APP tokens as and when they sponsor a successful proposal, fostering community engagement and shaping the governance system.
+
             </p>
           </div>
           <div className="sm:flex-1">
