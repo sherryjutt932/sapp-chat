@@ -34,31 +34,31 @@ import avatarSrc from "../assests/images/avatar.jpeg";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
-
-const imageArray = [
-    {
-        src:MintImg1,
-        title:"keygal"
-    },
-    {
-        src:MintImg2,
-        title:"Hadalns"
-    },
-    {
-        src:MintImg3,
-        title:"OANac"
-    },
-    {
-        src:MintImg4,
-        title:"Flccal"
-    },
-    {
-        src:MintImg5,
-        title:"ALCmla"
-    }
-  ]
+const imageArray2 = [
+  {
+    src: MintImg1,
+    title: "keygal",
+  },
+  {
+    src: MintImg2,
+    title: "Hadalns",
+  },
+  {
+    src: MintImg3,
+    title: "OANac",
+  },
+  {
+    src: MintImg4,
+    title: "Flccal",
+  },
+  {
+    src: MintImg5,
+    title: "ALCmla",
+  },
+];
 
 export default function MintPage() {
   const [isSelected, setIsSelected] = useState(0);
@@ -69,6 +69,48 @@ export default function MintPage() {
   const [isWalletOpen, setIsWalletOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imageArray, setImageArray] = useState([]);
+
+  const importAll = (r) => {
+    return Promise.all(
+      r.keys().map(async (key) => {
+        const module = await r(key);
+        return module;
+      })
+    );
+  };
+
+  const loadImages = async () => {
+    const images = await importAll(
+      require.context("./NFT", false, /\.(png)$/)
+    );
+    setImagesLoaded(true);
+    return images;
+  };
+  
+
+  useEffect(() => {
+    let isMounted = true;
+    if (isMounted) {
+      loadImages().then((images) => {
+        const newImageArray = images.map((image, index) => ({
+          src: image,
+          title: `Image ${index + 1}`,
+        }));
+        setImageArray(newImageArray);
+        // Example code for setting currentIndex to a new random index every 5 seconds
+        const interval = setInterval(() => {
+          setCurrentIndex(Math.floor(Math.random() * newImageArray.length));
+        }, 500);
+        return () => {
+          clearInterval(interval);
+          isMounted = false;
+        };
+      });
+    }
+  }, []);
 
   const handleClick = (index) => {
     setIsSelected(index);
@@ -121,27 +163,18 @@ export default function MintPage() {
     ],
   };
 
-
   useEffect(() => {
     if (isOpen) {
       setDropdownHeight(dropdownRef.current.offsetHeight);
     }
   }, [isOpen]);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % imageArray.length);
-    }, 1000);
-
-    return () => clearInterval(interval);
-}, [imageArray.length]);
 
   const copyTextToClipboard = () => {
     const textToCopy = document.querySelector(".text-to-copy");
     if (textToCopy) {
       navigator.clipboard.writeText(textToCopy.textContent);
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 500); // Reset the copied state after 3 seconds
+      setTimeout(() => setIsCopied(false), 1000); // Reset the copied state after 3 seconds
     }
   };
 
@@ -196,9 +229,7 @@ export default function MintPage() {
             secondary sales, voting rights, stake rewards, and exclusive access
             to various opportunities,
           </b>{" "}
-          <span className="text-red-500">
-            motivating users to actively contribute to the ecosystem's growth.{" "}
-          </span>
+          motivating users to actively contribute to the ecosystem's growth.
         </p>
 
         <p>
@@ -366,7 +397,9 @@ export default function MintPage() {
                       alt=""
                       className="w-10 aspect-square rounded-lg"
                     />
-                    <p className="text-gray-500 text-sm leading-none">{item.title}</p>
+                    <p className="text-gray-500 text-sm leading-none">
+                      {item.title}
+                    </p>
                   </a>
                 );
               })}
@@ -378,7 +411,7 @@ export default function MintPage() {
           <div className="text-center">
             <p className="flex items-center gap-2">
               <span className="w-6 aspect-square bg-[#2D2832] rounded-full flex justify-center items-center">
-                1
+                2
               </span>{" "}
               Choose a wallet
             </p>
@@ -396,7 +429,9 @@ export default function MintPage() {
                       alt=""
                       className="w-10 aspect-square rounded-lg"
                     />
-                    <p className="text-gray-500 text-sm leading-none">{item.title}</p>
+                    <p className="text-gray-500 text-sm leading-none">
+                      {item.title}
+                    </p>
                   </a>
                 );
               })}
@@ -461,21 +496,32 @@ export default function MintPage() {
 
         {/* content */}
         <div className="px-5 sm:px-16 2xl:px-16 flex-grow flex flex-col sm:mx-auto xl:flex-row justify-center gap-4 sm:gap-[6vw] py-6 sm:py-20 items-start relative">
-
-          <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
-            <img className="block w-full" src={imageArray[currentIndex].src} alt="" />
-            <div className="opacity-80 absolute bottom-0 right-0 bg-[#636056] w-52 sm:w-64 sm:h-10 h-9 text-[#636056 flex justify-center items-center text-xl sm:text-2xl font-normalF font-bold uppercase">
-            {imageArray[currentIndex].title}
+          {imagesLoaded ? (
+            <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
+              <img
+                className="block w-full"
+                src={imageArray[currentIndex].src}
+                alt=""
+              />
+              <div className="opacity-80 absolute bottom-0 right-0 bg-[#636056] w-52 sm:w-64 sm:h-10 h-9 text-[#636056 flex justify-center items-center text-xl sm:text-2xl font-normalF font-bold uppercase">
+                {imageArray[currentIndex].title}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
+            </div>
+          )}
 
           <div className="w-full sm:w-[70vw] xl:w-[30vw] font-normalF">
-            <h1 className="text-xl sm:text-[48px] font-bold sm:mb-4 mb-0 flex leading-10 items-center justify-between py-2 sm:py-0">STEDDY DN404 <button
-              onClick={handleShareClick}
-              className="bg-[#ffffff20] rounded-lg py-3 px-3 font-base w-fit flex sm:hidden items-center gap-3 hover:bg-[#ffffff30] transition-all"
-            >
-              <LiaShareSolid />
-            </button></h1>
+            <h1 className="text-xl sm:text-[48px] font-bold sm:mb-4 mb-0 flex leading-10 items-center justify-between py-2 sm:py-0">
+              STEDDY DN404{" "}
+              <button
+                onClick={handleShareClick}
+                className="bg-[#ffffff20] rounded-lg py-3 px-3 font-base w-fit flex sm:hidden items-center gap-3 hover:bg-[#ffffff30] transition-all"
+              >
+                <LiaShareSolid />
+              </button>
+            </h1>
 
             <div className="w-full border-b border-[#ffffff20] flex gap-6">
               <button
@@ -555,7 +601,10 @@ export default function MintPage() {
                   </div>
                 </div>
 
-                <button  onClick={handleWalletClick} className="bg-white rounded-lg p-4 text-black font-semibold">
+                <button
+                  onClick={handleWalletClick}
+                  className="bg-white rounded-lg p-4 text-black font-semibold"
+                >
                   Connect Wallet
                 </button>
               </div>
