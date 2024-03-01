@@ -333,7 +333,7 @@ export default function MintPage() {
   function WalletPopUp() {
     return (
       <div className="bg-[#00000080] fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center">
-        <div className="rounded-xl bg-dark w-[calc(100%-32px)] sm:min-w-[500px] p-8 sm:p-12 font-normalF relative">
+        <div className="rounded-xl bg-dark w-[calc(100%-32px)] sm:w-fit sm:min-w-[500px] p-8 sm:p-12 font-normalF relative">
           <button
             className="absolute right-0 top-0 text-2xl m-5 py-3 px-3"
             onClick={handleWalletClick}
