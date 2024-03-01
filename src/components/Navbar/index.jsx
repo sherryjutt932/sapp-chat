@@ -23,6 +23,10 @@ export default function Navbar({ theme }) {
       target:""
     },
     {
+      label: "Mint",
+      url: "/Mint",
+    },
+    {
       label: "DN404",
       new:true,
       url: "/DN404",

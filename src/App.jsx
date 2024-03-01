@@ -4,6 +4,7 @@ import "./App.css";
 
 import Home from "./pages/Home.jsx";
 import DN404 from "./pages/DN404.jsx";
+import Mint from "./pages/Mint.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -49,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/DN404" element={<DN404 />} />
+          <Route path="/Mint" element={<Mint />} />
         </Routes>
       </main>
     </Router>
