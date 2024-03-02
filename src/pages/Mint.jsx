@@ -83,13 +83,10 @@ export default function MintPage() {
   };
 
   const loadImages = async () => {
-    const images = await importAll(
-      require.context("./NFT", false, /\.(png)$/)
-    );
+    const images = await importAll(require.context("./NFT", false, /\.(png)$/));
     setImagesLoaded(true);
     return images;
   };
-  
 
   useEffect(() => {
     let isMounted = true;
@@ -336,7 +333,7 @@ export default function MintPage() {
 
           <div className="flex items-center justify-between py-3 pl-4 pr-1 border rounded-lg border-[#453d4d] mt-4">
             <p className="overflow-ellipsis overflow-hidden whitespace-nowrap text-left text-to-copy">
-            https://sapp-chat.vercel.app/Mint
+              https://sapp-chat.vercel.app/Mint
             </p>
 
             <div className="flex items-center">
@@ -497,19 +494,22 @@ export default function MintPage() {
         {/* content */}
         <div className="px-5 sm:px-16 2xl:px-16 flex-grow flex flex-col sm:mx-auto xl:flex-row justify-center gap-4 sm:gap-[6vw] py-6 sm:py-20 items-start relative">
           {imagesLoaded ? (
-            <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
-              <img
-                className="block w-full"
-                src={imageArray[currentIndex].src}
-                alt=""
-              />
-              <div className="opacity-80 absolute bottom-0 right-0 bg-[#636056] w-52 sm:w-64 sm:h-10 h-9 text-[#636056 flex justify-center items-center text-xl sm:text-2xl font-normalF font-bold uppercase">
-                {imageArray[currentIndex].title}
-              </div>
-            </div>
+            imageArray.map((item, index) => {
+              return (
+                <div style={{ display: currentIndex === index ? 'block' : 'none' }} className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
+                  <img
+                    className="block w-full"
+                    src={item.src}
+                    alt=""
+                  />
+                  <div className="opacity-80 absolute bottom-0 right-0 bg-[#636056] w-52 sm:w-64 sm:h-10 h-9 text-[#636056 flex justify-center items-center text-xl sm:text-2xl font-normalF font-bold uppercase">
+                    {item.title}
+                  </div>
+                </div>
+              );
+            })
           ) : (
-            <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden">
-            </div>
+            <div className="w-full sm:w-[40vw] xl:w-[25vw] mx-auto rounded-3xl aspect-square bg-[#ffffff20] relative overflow-hidden"></div>
           )}
 
           <div className="w-full sm:w-[70vw] xl:w-[30vw] font-normalF">
