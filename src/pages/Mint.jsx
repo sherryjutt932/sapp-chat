@@ -97,13 +97,13 @@ export default function MintPage() {
       loadImages().then((images) => {
         const newImageArray = images.map((image, index) => ({
           src: image,
-          title: `Image ${index + 1}`,
+          title: `STEDDY ${index + 1}`,
         }));
         setImageArray(newImageArray);
         // Example code for setting currentIndex to a new random index every 5 seconds
         const interval = setInterval(() => {
           setCurrentIndex(Math.floor(Math.random() * newImageArray.length));
-        }, 500);
+        }, 1000);
         return () => {
           clearInterval(interval);
           isMounted = false;
