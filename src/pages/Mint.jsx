@@ -30,7 +30,7 @@ import MintImg4 from "../assests/images/MintImg4.jpeg";
 import MintImg5 from "../assests/images/MintImg5.jpeg";
 
 import mintbg from "../assests/images/mintbg.png";
-import avatarSrc from "../assests/images/avatar.jpeg";
+import avatarSrc from "../assests/images/avatar.png";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -336,7 +336,7 @@ export default function MintPage() {
 
           <div className="flex items-center justify-between py-3 pl-4 pr-1 border rounded-lg border-[#453d4d] mt-4">
             <p className="overflow-ellipsis overflow-hidden whitespace-nowrap text-left text-to-copy">
-              truffle.wtf/project/asha-empire-onlinewtf/project/asha-empire-online
+            https://sapp-chat.vercel.app/Mint
             </p>
 
             <div className="flex items-center">
