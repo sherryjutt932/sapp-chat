@@ -99,14 +99,18 @@ export default function MintPage() {
         setImageArray(newImageArray);
         // Example code for setting currentIndex to a new random index every 5 seconds
         const interval = setInterval(() => {
-          setCurrentIndex(Math.floor(Math.random() * newImageArray.length));
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % newImageArray.length);
         }, 1000);
+
+        
         return () => {
           clearInterval(interval);
           isMounted = false;
         };
       });
     }
+
+    console.log(imageArray);
   }, []);
 
   const handleClick = (index) => {
