@@ -29,7 +29,7 @@ import MintImg3 from "../assests/images/MintImg3.jpeg";
 import MintImg4 from "../assests/images/MintImg4.jpeg";
 import MintImg5 from "../assests/images/MintImg5.jpeg";
 
-import mintbg from "../assests/images/mintbg.png";
+import mintbg from "../assests/images/mintbg.jpg";
 import avatarSrc from "../assests/images/avatar.png";
 
 import gsap from "gsap";
