@@ -281,8 +281,8 @@ export default function DN404() {
             funds wallet we shall provide. <br />
             <br />
             The mint starts in 20th of March 2024 at 4 PM UTC. You
-            can participate in the minting on Change the (Magic Eden exchange) to on our website using the
-            link below:
+can participate in the minting on our website using the
+link below:
           </p>
           <Buttons />
         </section>
