@@ -20,12 +20,12 @@ gsap.registerPlugin(ScrollTrigger);
 function Buttons() {
   return (
     <div className="opacityAnim flex flex-col sm:flex-row mx-auto gap-4 sm:gap-24 justify-center items-center">
-      <button className="px-6 py-3 2xl:px-10 2xl:py-6 min-w-[200px] 2xl:min-w-[250px] rounded-full bg-sec text-white font-normalF text-[16px] sm:text-[20px] hover:bg-secD transition-all ease duration-500">
+      <a href=" https://forms.gle/YeKBsNXn8CPniF2V8" target="_blank" className="no-underline px-6 py-3 2xl:px-10 2xl:py-6 min-w-[200px] 2xl:min-w-[250px] rounded-full bg-sec text-white font-normalF text-[16px] sm:text-[20px] hover:bg-secD transition-all ease duration-500">
         Join Whitelist
-      </button>
-      <button className="px-6 py-3 2xl:px-10 2xl:py-6 min-w-[200px] 2xl:min-w-[250px] rounded-full border border-sec text-sec font-normalF text-[16px] sm:text-[20px] hover:bg-secD transition-all ease duration-500 hover:text-light">
+      </a>
+      <a href="/Mint" className="no-underline px-6 py-3 2xl:px-10 2xl:py-6 min-w-[200px] 2xl:min-w-[250px] rounded-full border border-sec text-sec font-normalF text-[16px] sm:text-[20px] hover:bg-secD transition-all ease duration-500 hover:text-light">
         Mint Now
-      </button>
+      </a>
     </div>
   );
 }
@@ -273,15 +273,15 @@ export default function DN404() {
             How to Mint
           </h1>
           <p className="font-normalF text-[16px] sm:text-[18px] 2xl:text-[20px] w-[90%] mx-auto pb-8 xl:pb-16 text-[#7A7A7A]">
-            The whitelist starts on 25th February 2024 at 4 PM UTC and ends on
-            February 28th, 2024 at 9M UTC. Each NFT is priced at $150. You have
+            The whitelist starts on 6th of March 2024 at 4 PM UTC and ends on
+            15 of March, 2024 at 9M UTC. Each NFT is priced at $200. You have
             the option to pay the full amount in USDT or split the payment with
-            $50 in APP tokens and $100 in USDT. To secure your whitelist status,
+            $50 in APP tokens and $150 in USDT. To secure your whitelist status,
             commit the initial $50 of your payment in APP tokens to the sale
             funds wallet we shall provide. <br />
             <br />
-            The mint starts in February on 29th February 2024 at 4 PM UTC. You
-            can participate in the minting on the Magic Eden exchange using the
+            The mint starts in 20th of March 2024 at 4 PM UTC. You
+            can participate in the minting on Change the (Magic Eden exchange) to on our website using the
             link below:
           </p>
           <Buttons />
