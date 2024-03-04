@@ -199,7 +199,7 @@ export default function MintPage() {
           </div>
           <div>
             <div className="text-gray-400">Metadata</div>
-            <div>Mutable?</div>
+            <div>Mutable</div>
           </div>
         </div>
 
@@ -563,21 +563,21 @@ export default function MintPage() {
 
                 <div className="font-bold flex justify-between">
                   <span>Total:</span>
-                  <button
+                  <span
                     className="flex items-center gap-1"
-                    onClick={handleOpenClick}
+                    // onClick={handleOpenClick}
                   >
                     ~1.034 BNB{" "}
-                    <span
+                    {/* <span
                       className={`font-bold text-xl leading-none transition-all duration-500 ${
                         isOpen ? "rotate-180" : " "
                       }`}
                     >
                       <IoIosArrowDown />
-                    </span>
-                  </button>
+                    </span> */}
+                  </span>
                 </div>
-
+{/* 
                 <div
                   style={{ maxHeight: isOpen ? `${dropdownHeight}px` : "0px" }}
                   className="overflow-hidden transition-all duration-500"
@@ -605,6 +605,7 @@ export default function MintPage() {
                   </div>
                 </div>
 
+ */}
                 <button
                   onClick={handleWalletClick}
                   className="bg-white rounded-lg p-4 text-black font-semibold"

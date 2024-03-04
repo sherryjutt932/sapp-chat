@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
     </div>
     <div className="w-full bg-black py-10 px-5 sm:px-16 flex gap-5 items-center flex-col sm:flex-row text-white font-normalF">
-      <p className="flex-1 text-center sm:text-left">Copyright © 2020 Sappchat.com | All Rights Reserved</p>
+      <p className="flex-1 text-center sm:text-left">Copyright © 2024 OrangeRock Labs | All Rights Reserved</p>
       <p className="flex-1 text-center">Developed by <b>OrangeRock Labs Ltd.</b></p>
       <div className="flex gap-5 justify-end flex-1">
         <a href="https://twitter.com/SappChatApp" target="_blank" rel="noreferrer">
